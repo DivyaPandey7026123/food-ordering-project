@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const Order = require("./models/order");
 const Food = require("./models/Food");
-const User = require("./models/User");
+const User = require("./models/user");
 const authRoutes = require("./routes/authRoutes");
 const Razorpay = require("razorpay");
 
