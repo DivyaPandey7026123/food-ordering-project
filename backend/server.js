@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 const Order = require("./models/order");
 const Food = require("./models/Food");
 const User = require("./models/user");
-const authRoutes = require("./routes/authRoutes");
+const authRoutes = require("./routes/authroutes");
 const Razorpay = require("razorpay");
 
 const app = express();
