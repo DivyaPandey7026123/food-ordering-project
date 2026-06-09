@@ -13,8 +13,13 @@ const Razorpay = require("razorpay");
 const app = express();
 
 // ✅ Middleware
+const allowedOrigins = [
+  "https://food-ordering-project-kh9z79ykx-divya-s-projects22.vercel.app",
+  "http://localhost:5173"
+];
+
 app.use(cors({
-  origin: "https://your-frontend.vercel.app",
+  origin: allowedOrigins,
   credentials: true
 }));
 app.use(express.json());

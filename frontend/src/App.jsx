@@ -76,14 +76,18 @@ const handlePayment = () => {
 };
   // ================= FETCH FOODS =================
 
-  useEffect(() => {
-
-    fetch("https://food-ordering-project-966g.onrender.com/api/foods")
-      .then((res) => res.json())
-      .then((data) => setFoods(data))
-      .catch((err) => console.log(err));
-
-  }, []);
+ useEffect(() => {
+  fetch(`${API}/api/foods`)
+    .then((res) => {
+      console.log("STATUS:", res.status);
+      return res.json();
+    })
+    .then((data) => {
+      console.log("🔥 FOODS API RESPONSE:", data);
+      setFoods(Array.isArray(data) ? data : []);
+    })
+    .catch((err) => console.log("FETCH ERROR:", err));
+}, []);
 
   // ================= CART FUNCTIONS =================
 
