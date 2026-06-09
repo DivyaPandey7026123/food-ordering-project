@@ -12,6 +12,7 @@ export default function App() {
   const [category, setCategory] = useState("All");
 
   const [showCart, setShowCart] = useState(false);
+  const API = "https://food-ordering-project-966g.onrender.com";
 
   // ================= AUTH =================
 
@@ -72,7 +73,7 @@ const handlePayment = () => {
 
   useEffect(() => {
 
-    fetch("http://localhost:5001/api/foods")
+    fetch("https://food-ordering-project-966g.onrender.com/api/foods")
       .then((res) => res.json())
       .then((data) => setFoods(data))
       .catch((err) => console.log(err));
@@ -163,7 +164,7 @@ const handlePayment = () => {
     try {
 
       const response = await fetch(
-        `http://localhost:5001/api/auth/${endpoint}`,
+        `https://food-ordering-project-966g.onrender.com/api/auth/${endpoint}`,
         {
           method: "POST",
 
@@ -233,7 +234,7 @@ const handlePayment = () => {
   try {
 
     const res = await fetch(
-      "http://localhost:5001/api/create-order",
+      "`https://food-ordering-project-966g.onrender.com/api/auth/",
       {
         method: "POST",
 
@@ -270,7 +271,7 @@ const handlePayment = () => {
         // SAVE ORDER
 
         await fetch(
-          "http://localhost:5001/api/orders",
+          "https://food-ordering-project-966g.onrender.com/api/orders",
           {
             method: "POST",
 
