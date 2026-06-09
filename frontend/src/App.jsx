@@ -32,9 +32,11 @@ export default function App() {
     JSON.parse(localStorage.getItem("user"))
   );
   const totalPrice = cart.reduce(
-  (total, item) => total + item.price * item.quantity,
+  (total, item) =>
+    total + Number(item.price) * item.quantity,
   0
 );
+
 const handlePayment = () => {
 
   if (!window.Razorpay) {
