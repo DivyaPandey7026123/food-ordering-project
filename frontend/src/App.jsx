@@ -31,7 +31,10 @@ export default function App() {
   const [user, setUser] = useState(
     JSON.parse(localStorage.getItem("user"))
   );
-  const totalPrice = 500;
+  const totalPrice = cart.reduce(
+  (total, item) => total + item.price * item.quantity,
+  0
+);
 const handlePayment = () => {
 
   if (!window.Razorpay) {
@@ -43,7 +46,7 @@ const handlePayment = () => {
 
     key: "rzp_test_SynpfzmjYWasZD",
 
-    amount: 500* 100,
+    amount: totalPrice * 100,
 
     currency: "INR",
 
