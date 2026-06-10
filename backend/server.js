@@ -14,7 +14,8 @@ const app = express();
 
 // ✅ Middleware
 const allowedOrigins = [
-  "https://food-ordering-project-kh9z79ykx-divya-s-projects22.vercel.app",
+  
+  "https://food-ordering-project-three.vercel.app",
   "http://localhost:5173"
 ];
 
