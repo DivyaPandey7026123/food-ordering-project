@@ -23,7 +23,7 @@ export default function App() {
   const [showPayment, setShowPayment] = useState(false);
 
   const [formData, setFormData] = useState({
-    name: "",
+    
     email: "",
     password: "",
   });
@@ -181,11 +181,15 @@ const handlePayment = () => {
             "Content-Type": "application/json",
           },
 
-          body: JSON.stringify(formData),
+         body: JSON.stringify({
+  email: formData.email,
+  password: formData.password,
+}),
         }
       );
 
       const data = await response.json();
+      console.log("LOGIN RESPONSE:", data);
 
       if (response.ok) {
 
